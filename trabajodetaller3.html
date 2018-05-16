@@ -1,0 +1,143 @@
+<html> 
+<head>
+	<title>Ejecicos de taller3</title>
+</head>
+<body> 
+<script languaje="javasript">
+	var nro1;
+	var nro2;
+	var nro3;
+	var opc;
+	var resultado;
+	var resultado2;
+	var nros =[4];
+	function area()
+	{
+	nro1=parseInt(document.formulario1.numero1.value);
+	nro2=parseInt(document.formulario1.numero2.value);
+	resultado=(nro1*nro2)/2;
+	document.formulario1.resut.value=resultado;
+	}
+	
+	function ecuaciongrado()
+	{
+	nro1=parseInt(document.formulario2.numero1.value);
+	nro2=parseInt(document.formulario2.numero2.value);
+	nro3=parseInt(document.formulario2.numero3.value);
+	resultado=((-nro2)+(Math.sqrt((nro2*nro2)-(4*nro1*nro3))))/2*nro1;
+	resultado2=((-nro2)-(Math.sqrt((nro2*nro2)-(4*nro1*nro3))))/2*nro1;
+	document.formulario2.resut.value=resultado;
+	document.formulario2.resut2.value=resultado2;
+	}
+	function mayor()
+	{
+	nro1=parseInt(document.formulario3.numero1.value);
+	nro2=parseInt(document.formulario3.numero2.value);
+	}
+	function calcular()
+	{
+	nros[0]=parseInt(document.formulario3.numero1.value);
+	nros[1]=parseInt(document.formulario3.numero2.value);
+	nros[2]=parseInt(document.formulario3.numero3.value);
+	nros[3]=parseInt(document.formulario3.numero4.value);
+	nros[4]=parseInt(document.formulario3.numero5.value);
+	resultado=nros[3]+nros[4];
+	document.formulario3.resut.value=resultado;
+	opc=parseInt(document.formulario3.opciones.value);
+		switch(opc)
+		{
+			case 1: resultado=nros[0];
+					for(var i=0;i<5;i++)
+					{
+						if(nros[i]>resultado)
+						{
+							resultado=nros[i];
+						}
+					}
+					break;
+			case 2: resultado=nros[0];
+					for(var i=0;i<5;i++)
+					{
+						if(nros[i]<resultado)
+						{
+							resultado=nros[i];
+						}
+					}
+					break;
+			case 3: var res=0;
+					for(var i=0;i<5;i++)
+					{
+						res=nros[i]+res;
+					}
+					resultado=res/5;
+					break;
+			case 4:var res="";
+					for(var i=0;i<5;i++)
+					{
+						if(nros[i]%2==0){
+						res=res+" "+nros[i].toString();}
+					}
+					resultado=res;
+				    break;
+			case 5:var res="";
+					for(var i=0;i<5;i++)
+					{
+						if(nros[i]%2==1){
+						res=res+" "+nros[i].toString();}
+					}
+					resultado=res;
+				    break;
+		}
+		document.formulario3.resut.value=resultado;
+	}
+</script>
+	
+		TRABAJO DE LENIN ARCIBIA SAUÑE
+	
+	AREA DE UN TRIANGULO
+	
+	<form name ="formulario1">
+	Digitar Base: <input type="text" id = "numero1"/></br>
+	Digitar Altura: <input type="text" id = "numero2"/></br>
+	<input type="button" value="calcular" onclick="area()"></br>
+	Area del Triangulo: <input type="text" id = "resut"/></br>
+	
+	</form></br>
+	
+	ECUACIONES DE SEGUNDO GRADO
+	<form name ="formulario2">
+	Digitar numero1: <input type="text" id = "numero1"/></br>
+	Digitar numero2: <input type="text" id = "numero2"/></br>
+	Digitar numero3: <input type="text" id = "numero3"/></br>
+			
+	</select></br>
+	<input type="button" value="calcular" onclick="ecuaciongrado()"></br>
+	resultado: <input type="text" id = "resut"/></br>
+	resultado: <input type="text" id = "resut2"/></br>
+	
+	</form></br>
+	
+	MAYOR Y MENOR DE 5 NUMEROS
+	<form name ="formulario3">
+	Digitar numero1: <input type="text" id = "numero1"/></br>
+	Digitar numero2: <input type="text" id = "numero2"/></br>
+	Digitar numero3: <input type="text" id = "numero3"/></br>
+	Digitar numero4: <input type="text" id = "numero4"/></br>
+	Digitar numero5: <input type="text" id = "numero5"/></br>
+	
+	<select name ="opciones">
+	<option value="1">mayor</option>
+	<option value="2">menor</option>
+	<option value="3">promedio</option>
+	<option value="4">numeros pares</option>
+	<option value="5">numeros impares</option>
+	
+	</select></br>
+	<input type="button" value="calcular" onclick="calcular()"></br>
+	resultado: <input type="text" id = "resut"/></br>
+	
+	
+	
+	</form></br>
+</body>
+</html>
